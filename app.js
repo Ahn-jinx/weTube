@@ -5,18 +5,12 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
+import {userRouter} from './router'
 
 const app = express();
 
-const PORT = 4000;
-
 //function hiHome(req, res){
 //    res.send('gogogoGo')};
-
-const hiHome = (req, res) => {
-    res.send('Fly me to the moon')
-}
-
 
 function hiProfile(req, res){
     res.send('This is profile !!')
@@ -33,8 +27,6 @@ const betwwen2 = (req, res, next) => {
 }
 
 
-app.listen(PORT);
-
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -43,6 +35,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.use(betwwen);
-app.get('/', hiHome);
+app.get('/', (req, res)=>{res.send(`Hello`)})
+app.use('/', userRouter);
 app.use(betwwen2);
 app.get('/profile',hiProfile)
+
+export default app;
+
+console.log('dfkslfksdlfks;lgkw;gl')
