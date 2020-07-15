@@ -1,13 +1,14 @@
 import express from 'express'
 import routes from '../routes'
+import { home, search } from '../controllers/userController';
 
 const globalRouter = express.Router();
 
-globalRouter.get('/', (req,res) => {res.send('this is home')})
-globalRouter.get(routes.join, (req,res) => {res.send('this is j')})
-globalRouter.get('/login', (req,res) => {res.send('this is LI')})
-globalRouter.get('/logout', (req,res) => {res.send('this is LO')})
-globalRouter.get('/search', (req,res) => {res.send('this is sss')})
+globalRouter.get(routes.home, home)
+globalRouter.get(routes.search, search)
+globalRouter.get(routes.join, (req,res) => {res.send('this is join')})
+globalRouter.get(routes.login, (req,res) => {res.send('this is Login')})
+globalRouter.get(routes.logout, (req,res) => {res.send('this is LogOut')})
 
 
 export default globalRouter;
