@@ -22,6 +22,12 @@ const betwwen = (req, res, next) => {
     next();
 }
 
+const localsMiddleware = (req, res, next) => {
+    res.locals.siteName = 'wetube';
+    res.locals.routes = routes;
+    next();
+}
+
 app.set('view engine', 'pug')
 app.use(helmet());
 app.use(morgan('dev'));
@@ -29,7 +35,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+app.use(localsMiddleware);
 app.use(betwwen);
 
 app.use(routes.home, globalRouter)
