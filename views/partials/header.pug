@@ -5,6 +5,10 @@ header.header
         h1 WETUBE
 
     .header_column
+        form(name = 'search', action = routes.search, method = 'get')
+            input(type = 'text', name = 'term', placeholder = 'search by term...')
+
+    .header_column
         ul
             li 
                 a(href = routes.join) Join
