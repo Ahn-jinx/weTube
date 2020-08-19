@@ -5,9 +5,13 @@ const LOGOUT = '/log-out';
 const SEARCH = '/search';
 
 const USERS = '/users';
-const USER_DETAIL = '/:id';
+const USER_DETAIL = '/users/:id';
 const EDIT_PROFILE = '/edit-profile';
-const CHANGE_PASSWORD = '/change-password';
+const CHANGE_PASSWORD = '/users/change-password';
+
+const USER_DETAIL_inPUG = '/users/users/:id';
+const EDIT_PROFILE_inPUG = '/users/edit-profile';
+const CHANGE_PASSWORD_inPUG = '/users/users/change-password';
 
 const VIDEOS = '/videos';
 const UPLOAD = '/upload';
@@ -25,6 +29,11 @@ const routes = {
     userDetail : USER_DETAIL,
     editProfile : EDIT_PROFILE,
     changePassword : CHANGE_PASSWORD,
+
+    userDetailPug : USER_DETAIL_inPUG,
+    editProfilePug : EDIT_PROFILE_inPUG,
+    changePasswordPug : CHANGE_PASSWORD_inPUG,
+
     videos : VIDEOS,
     upload : UPLOAD,
     videoDetail : VIDEO_DETAIL,

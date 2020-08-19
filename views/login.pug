@@ -2,7 +2,7 @@ extend layouts/main.pug
 
 block content
         .login_column
-        form(name = 'login', action = '/login', method = 'post')
+        form(name = 'login', action = routes.login, method = 'post')
             input(type="email", name = 'email', placeholder = 'E-mail')
             input(type="password", name = 'password', placeholder = 'Password')
             input(type="submit", value = 'Login')
